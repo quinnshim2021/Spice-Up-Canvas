@@ -5,7 +5,7 @@
     "content_scripts": [
         {
             "matches": [
-                "https://canvas.northwestern.edu/"
+                "https://*/*"
             ],
             "js": ["content.js"]
         }

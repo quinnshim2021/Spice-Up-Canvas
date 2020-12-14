@@ -28,7 +28,7 @@ const run = (command) => {
 // gets 5 trending gives data to run
 // add them to popup
 const giphy = () => {
-    let api_key = "XbE48ebukSuhtyicojTjKNpwLcnQ8wb3";
+    let api_key = env["API_KEY"];
     
     fetch(`https://api.giphy.com/v1/gifs/trending?api_key=${api_key}&limit=4`)
         .then(response => {

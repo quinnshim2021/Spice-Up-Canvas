@@ -1,7 +1,7 @@
 /* WORK FROM HERE
-1. ALLOW SEARCHING, pagination (add page button)
-2. MAKE MATCH PATTERN FOR CANVAS
-4. CACHE GIPHY CALLS */
+1. ALLOW SEARCHING
+2. pagination (add page button)
+3. CACHE GIPHY CALLS */
 body {
     height: 400px;
     width: 400px;

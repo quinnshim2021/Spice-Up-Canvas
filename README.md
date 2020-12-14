@@ -20,12 +20,12 @@ The header images on Canvas's Dashboard are usually boring. With this Chrome Ext
 - Finally, save `content.js` and go back to `chrome://extensions`. Click refresh button on Spice-Up-Canvas card. 
 - You're good to go! I like to show all classes so that I can have more images :)
 
+## Notes
+- Using env.js file to hold api key. Will need to create your own file containing your key as I have mine covered by my .gitignore.
+
 ## To-Do
-- Fix UI for popup
-- Allow selecting for popup
-- Store links between sessions
 - Allow searching
-- Make match pattern for canvas
+- Paginate results
 - Cache giphy calls
 
 ## Notes for Future
