@@ -80,12 +80,14 @@ const deleteImages = (s) => {
 
 const updateHeaders = (s) => {
     let headerHeros = document.getElementsByClassName("ic-DashboardCard__header_hero");
+    let previousStyles = headerHeros[0].style;
+
     let src = s;
 
     let count = 0;
     for (let box of headerHeros){
         if (src === undefined || src.length === 0){
-            box.setAttribute('style', `background-color: blue !important;`);
+            box.setAttribute('style', "background-color: #add8e6;");
         }
         else {
             if (count === src.length){ count = 0; }

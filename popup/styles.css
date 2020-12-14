@@ -1,13 +1,13 @@
 /* WORK FROM HERE
-3. make list a set
-3. ALLOW SEARCHING, pagination (add page button)
-4. MAKE MATCH PATTERN FOR CANVAS
-5. CACHE GIPHY CALLS */
+1. ALLOW SEARCHING, pagination (add page button)
+2. MAKE MATCH PATTERN FOR CANVAS
+4. CACHE GIPHY CALLS */
 body {
     height: 400px;
     width: 400px;
     background-color: #85dcb8;
 }
+
 #grid-container {
     height: 300px;
     width: 380px;
