@@ -1,0 +1,14 @@
+{
+    "manifest_version": 2,
+    "name": "Spice Up Canvas",
+    "version": "0.1",
+    "content_scripts": [
+        {
+            "matches": [
+                "https://canvas.northwestern.edu/"
+            ],
+            "js": ["content.js"]
+        }
+    ],
+    "web_accessible_resources": ["images/*"] 
+}
