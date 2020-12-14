@@ -10,5 +10,10 @@
             "js": ["content.js"]
         }
     ],
+    "browser_action": {
+        "default_popup": "popup/popup.html",
+        "default_title": "Spice Up Canvas"
+    },
+    "permissions": ["tabs"],
     "web_accessible_resources": ["images/*"] 
 }

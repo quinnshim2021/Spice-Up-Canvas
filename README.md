@@ -23,3 +23,5 @@ The header images on Canvas's Dashboard are usually boring. With this Chrome Ext
 ## Notes for Future
 - Need to create upload/delete system within extension.
 - Add some more creative updates to Canvas.
+- Make match pattern for canvas
+- Allow turning off
