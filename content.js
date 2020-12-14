@@ -1,5 +1,6 @@
 console.log("Spice Engaged");
 
+/* just for me lol */
 const replaceHeaders = () => {
     let headerHeros = document.getElementsByClassName("ic-DashboardCard__header_hero");
 
@@ -31,7 +32,7 @@ const rH = (s) => {
     let headerHeros = document.getElementsByClassName("ic-DashboardCard__header_hero");
 
     let src = s;
-    console.log(src);
+
     let count = 0;
     for (let box of headerHeros){
         if (src[count]){
@@ -47,17 +48,11 @@ const rH = (s) => {
 }
 
 const gotMessage = (message, sender, sendResponse) => {
-    let src = [];
-    for (let m of message.data){
-        console.log(`${m["id"]}: ${m["images"]["downsized_medium"]["url"]}`);
-        let id = m["images"]["downsized_small"]["mp4"].split("media/")[1].split("/giphy")[0];
-        src.push(`https://i.giphy.com/${id}.gif`);
-        rH(src);
-    }
-    // add message and conditional for turning off headers later
+    console.log("Message recieved");
+    rH(message.data);
 }
 
-// when page loads, run style changes
+// can remove this line after everything else is done lol
 window.addEventListener('load', replaceHeaders, false);
 
 // listen for messages from other tabs
