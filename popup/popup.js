@@ -1,15 +1,24 @@
-let GLOBALSRC = [];
+// toggle what is selected
+const toggleSelection = (option) => {
+    option.classList.toggle("selected");
+}
 
 // sends array of gif objects to content
-const run = () => {
+const run = (command) => {
     let params = {
         active: true,
         currentWindow: true
     };
 
+    let src = [];
+    for (let selection of document.getElementsByClassName('selected')){
+        src.push(selection.src);
+    }
+
     chrome.tabs.query(params, (tabs) => {
         let msg = {
-            data: GLOBALSRC
+            command: command,
+            data: src
         };
         
         chrome.tabs.sendMessage(tabs[0].id, msg);
@@ -19,9 +28,9 @@ const run = () => {
 // gets 5 trending gives data to run
 // add them to popup
 const giphy = () => {
-    let api_key = "GwDHB6rgzHT6tp60qyuxCKsKifIUptff";
+    let api_key = "XbE48ebukSuhtyicojTjKNpwLcnQ8wb3";
     
-    fetch(`https://api.giphy.com/v1/gifs/trending?api_key=${api_key}&limit=5`)
+    fetch(`https://api.giphy.com/v1/gifs/trending?api_key=${api_key}&limit=4`)
         .then(response => {
             return response.json();
         })
@@ -34,20 +43,26 @@ const giphy = () => {
             }
 
             /* add to popup.html here */
-            let table = document.getElementById("table");
+            let grid = document.getElementById("grid-container");
             for (let gif of src) {
-                let ul = document.createElement("ul");
-                let img = document.createElement("img");
-                img.src = gif;
-                ul.appendChild(img);
-                table.appendChild(ul);
+                let div = document.createElement("div");
+                div.classList = "grid-item option";
+                div.src = gif;
+                div.setAttribute('style', `background: url(${gif}) !important; background-size: cover !important; background-repeat: no-repeat !important;`);
+                grid.appendChild(div);
             }
-            GLOBALSRC = src;
+
+            for(let option of document.getElementsByClassName('option')) {
+                option.addEventListener('click', (event) => {
+                    toggleSelection(option);
+                });
+            };
         })
         .catch(() => {
             console.log("error");
         });
 }
 
-document.getElementById("submit").addEventListener("click", run);
+document.getElementById("submit").addEventListener("click", (e) => {e.preventDefault(); run("save")}, false);
+document.getElementById("delete").addEventListener("click", (e) => {e.preventDefault(); run("delete")}, false);
 window.addEventListener('load', giphy, false);
