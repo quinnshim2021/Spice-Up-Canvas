@@ -3,12 +3,20 @@
         <link rel="stylesheet" href="styles.css">
     </head>
     <body>
-        <h1>Select Gifs</h1>
-        <div id="grid-container">
-          </div>
-        <button id="submit" class="button">Upload</button>
-        <button id="delete" class="button">Delete</button>
-        <!-- eventually make multiple gifs selectable, then press upload and only get those ones -->
+        <h2>Search Gifs<input id="userinput" type="text"><button  class="button search" id="search">Go</button></h2>
+        <div>
+            <a href="#" id="trending">Trending Gifs</a>
+            <div id="grid-container">
+            </div>
+            <div class="pagination">
+                <a id="-1" href="#">&laquo;</a>
+                <a id="page" href="#">1</a>
+                <a href="#" id="1" >&raquo;</a>
+            </div>
+            <button id="submit" class="button">Upload</button>
+            <button id="delete" class="button">Delete</button>
+            <button id="saved" class="button">View Saved</button>
+        </div>
 
         <script src="popup.js"></script>
         <script src="env.js"></script>
