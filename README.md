@@ -10,7 +10,7 @@ The header images on Canvas's Dashboard are usually boring. With this Chrome Ext
 - Proceed to steps below.
 
 ## Personalizing this Extension
-- The only hands on step you'll need to do is to follow the link below to get a <b>free</b> Giphy API Key. Once you have it, add a file to the Popup folder titled `env.js`. The only line you need to write is `const msg = { 'API_KEY': "your_api_key_here"}`. Once you have that file, you're good to go!
+- The only hands on step you'll need to do is to follow the link below to get a <b>free</b> Giphy API Key. Once you have it, go to the Popup folder and find `env.js`. The only line you need to write replace `you_api_key_here` with your api key.
   - <a href='https://support.giphy.com/hc/en-us/articles/360020283431-Request-A-GIPHY-API-Key'>Request a Giphy API Key</a>
 - Once you have your API key and have the extension loaded in Chrome, go to Canvas and open the Spice pop-up. There, you will find a search bar and a trending page for Giphy gifs. Feel free to explore trending or simply search for your favorite topic. Once you select a gif, select 'Upload' to see it on your Canvas page! 
   - To delete gifs, go to 'Saved', select the gifs you'd like to remove, and select 'Delete.'
