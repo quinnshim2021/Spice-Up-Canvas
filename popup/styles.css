@@ -1,12 +1,5 @@
-/* WORK FROM HERE
-2. fix search UI/all UI
-3. clean up code
-
-LATER:
-4. fix loading issues
-3. CACHE GIPHY CALLS */
 body {
-    height: 400px;
+    height: 500px;
     width: 400px;
     background-color: #85dcb8;
 }
@@ -31,18 +24,13 @@ body {
   }
 
 .button {
-    padding: 16px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    transition-duration: 0.4s;
-    cursor: pointer;
-    background-color: white; 
-    color: #E27D60; 
-    border: 2px solid #E27D60;
-  }
+  font-size: 1.2em;
+  margin: 1em;
+  padding: 0.25em 1em;
+  border: 2px solid palevioletred;
+  border-radius: 3px;
+}
+
 .button:hover{
     background-color: #E27D60;
     color: white;
@@ -51,20 +39,38 @@ body {
     border: 5px solid red;
 }
 
-.search{
-  height:15px;
-  width: 20px;
-  padding: 16px 32px;
-    font-size: 16px;
-    margin: 4px 2px;
-}
-
 .pagination a {
   color: black;
-  float: left;
-  padding: 8px 16px;
+  float: right;
+  padding: 8px 16px !important;
   text-decoration: none;
   transition: background-color .3s;
+  font-size: 10px !important;
 }
 
 .pagination a:hover:not(.active) {background-color: #ddd;}
+
+.item1 { grid-area: input; }
+.item2 { grid-area: search; }
+.item3 { grid-area: grid; }
+.item4 { grid-area: upload; }
+.item5 { grid-area: delete; }
+.item6 { grid-area: saved; }
+.item7 {grid-area: link; }
+.item8 {grid-area: page; }
+
+.over-container {
+  display: grid;
+  grid-template-areas:
+  'input . search'
+  'grid grid grid'
+  'link page page'
+  'upload delete saved';
+  grid-gap: 10px;
+  padding: 10px;
+}
+
+.over-container > div {
+  text-align: center;
+  font-size: 30px;
+}

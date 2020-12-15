@@ -3,19 +3,21 @@
         <link rel="stylesheet" href="styles.css">
     </head>
     <body>
-        <h2>Search Gifs<input id="userinput" type="text"><button  class="button search" id="search">Go</button></h2>
-        <div>
-            <a href="#" id="trending">Trending Gifs</a>
-            <div id="grid-container">
+        <div class="over-container">
+            <input id="userinput" placeholder="Search Gify" class="item1" type="text"><button  class="button search item2" id="search">Go</button>
+            <div class="item3">
+                <div id="grid-container">
+                </div>
             </div>
-            <div class="pagination">
-                <a id="-1" href="#">&laquo;</a>
+            <a href="#" class="item7" id="trending">Trending Gifs</a>
+            <div class="pagination item8">
+                <a id="1" href="#">&raquo;</a>
                 <a id="page" href="#">1</a>
-                <a href="#" id="1" >&raquo;</a>
+                <a href="#" id="-1" >&laquo;</a>
             </div>
-            <button id="submit" class="button">Upload</button>
-            <button id="delete" class="button">Delete</button>
-            <button id="saved" class="button">View Saved</button>
+            <button id="submit" class="button item4">Upload</button>
+            <button id="delete" class="button item5">Delete</button>
+            <button id="saved" class="button item6">Saved</button>
         </div>
 
         <script src="popup.js"></script>

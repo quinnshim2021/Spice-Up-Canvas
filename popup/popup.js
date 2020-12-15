@@ -16,8 +16,10 @@ const run = (command) => {
     };
 
     let src = [];
-    for (let selection of document.getElementsByClassName('selected')){
-        src.push(selection.src);
+    if (command === "save" || command === "delete"){
+        for (let selection of document.getElementsByClassName('selected')){
+            src.push(selection.src);
+        }
     }
 
     chrome.tabs.query(params, (tabs) => {
@@ -25,10 +27,11 @@ const run = (command) => {
             command: command,
             data: src
         };
-        chrome.tabs.sendMessage(tabs[0].id, msg, (response) =>{
+        return new Promise(function(resolve, reject) {chrome.tabs.sendMessage(tabs[0].id, msg, (response) =>{
             G_SAVED = response.data;
             console.log(response);
-        });
+            resolve(G_SAVED);
+        }) });
     });
 }
 
@@ -149,6 +152,14 @@ const loadListeners = () => {
         giphy();
     });
 
+    document.getElementById("userinput").addEventListener("keyup", function(event) {
+        if (event.keyCode === 13) {
+         event.preventDefault();
+         document.getElementById("search").click();
+        }
+    });
+
+    run("init");
     giphy();
 };
 

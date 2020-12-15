@@ -4,17 +4,20 @@ console.log("Spice Engaged");
 const replaceHeaders = (src) => {
     let headerHeros = document.getElementsByClassName("ic-DashboardCard__header_hero");
 
-    let alt = [chrome.extension.getURL("../../images/td.gif"), 
+    /* start of my personal stuff */
+    let alt = [chrome.extension.getURL("../../images/cat.gif"), 
                chrome.extension.getURL("../../images/wwy.gif"), 
                chrome.extension.getURL("../../images/tokyo.gif"), 
                chrome.extension.getURL("../../images/mista.gif"),
                chrome.extension.getURL("../../images/bakugo.gif"),
-               chrome.extension.getURL("../../images/caesar.gif"),
-               chrome.extension.getURL("../../images/vaporeon.gif"),
-               chrome.extension.getURL("../../images/yourname.gif"),
-               chrome.extension.getURL("../../images/jotaro.gif")];
+               chrome.extension.getURL("../../images/td.gif")];
     
-    src = alt; // alt stuff is for me, delete later
+    src = alt; 
+    document.getElementsByClassName("ic-app")[0].setAttribute('style', `background: url(${chrome.extension.getURL("../../images/mountain.gif")}) !important; background-size: cover !important; background-repeat: no-repeat !important;`);
+    document.getElementById("right-side-wrapper").setAttribute('style', `visibility: hidden !important;`)
+    document.getElementsByClassName("ic-Dashboard-header")[0].setAttribute('style', `visibility: hidden !important; height: 0px !important;`)
+    document.getElementsByClassName("ic-Layout-wrapper")[0].setAttribute('style', `max-width: 2000px !important;`)
+    /* end of personal stuff ^^ */
 
     if (src === undefined || src.length === 0){ return; }
 
@@ -25,10 +28,16 @@ const replaceHeaders = (src) => {
         box.setAttribute('style', `background: url(${src[count]}) !important; background-size: cover !important; background-repeat: no-repeat !important;`);
         count ++;
     }
+
+    document.getElementsByClassName("ic-app")[0].setAttribute('style', `background: url(${chrome.extension.getURL("../../images/mountain.gif")}) !important; background-size: cover !important; background-repeat: no-repeat !important;`);
+    document.getElementById("right-side-wrapper").setAttribute('style', `visibility: hidden !important;`)
+    document.getElementsByClassName("ic-Dashboard-header")[0].setAttribute('style', `visibility: hidden !important; height: 0px !important;`)
+    document.getElementsByClassName("ic-Layout-wrapper")[0].setAttribute('style', `max-width: 2000px !important;`)
+
 }
 
 const saveImages = async (s) => {
-    if (s === undefined || s.length === 0){ return; }
+    if (s === undefined){ return; }
     else{
         return new Promise(function(resolve, reject) {chrome.storage.sync.get(['src'], function(result){
                 console.log(`Images to save retrieved`);
@@ -103,7 +112,11 @@ const updateHeaders = (s) => {
 
 const gotMessage = (message, sender, sendResponse) => {
     console.log(`Message recieved:`);
-    if (message.command === "save"){
+    if (message.command === "init"){
+        saveImages(message.data).then((res) => {
+            sendResponse({txt: "updated saved", data: res});
+        });
+    }else if (message.command === "save"){
         saveImages(message.data).then((res) => {
             console.log(res);
             sendResponse({txt: "updated saved", data: res});

@@ -15,5 +15,5 @@
         "default_title": "Spice Up Canvas"
     },
     "permissions": ["tabs", "storage"],
-    "web_accessible_resources": ["images/*"] 
+    "web_accessible_resources": ["images/*.gif"] 
 }

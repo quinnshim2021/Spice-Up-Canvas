@@ -23,12 +23,7 @@ The header images on Canvas's Dashboard are usually boring. With this Chrome Ext
 ## Notes
 - Using env.js file to hold api key. Will need to create your own file containing your key as I have mine covered by my .gitignore.
 
-## To-Do
-- Allow searching
-- Paginate results
-- Cache giphy calls
-
 ## Notes for Future
-- Need to create upload/delete system within extension.
+- Work on loading times + caching
 - Add some more creative updates to Canvas.
 - Allow going to more pages in Popup
