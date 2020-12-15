@@ -28,7 +28,9 @@ const run = (command) => {
             data: src
         };
         return new Promise(function(resolve, reject) {chrome.tabs.sendMessage(tabs[0].id, msg, (response) =>{
-            G_SAVED = response.data;
+            if (response){
+                G_SAVED = response.data;
+            }
             console.log(response);
             resolve(G_SAVED);
         }) });

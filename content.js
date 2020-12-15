@@ -5,7 +5,8 @@ const replaceHeaders = (src) => {
     let headerHeros = document.getElementsByClassName("ic-DashboardCard__header_hero");
     
     /* start of my personal stuff */
-    /*let alt = [chrome.extension.getURL("../../images/cat.gif"), 
+    /*
+    let alt = [chrome.extension.getURL("../../images/cat.gif"), 
                chrome.extension.getURL("../../images/wwy.gif"), 
                chrome.extension.getURL("../../images/tokyo.gif"), 
                chrome.extension.getURL("../../images/fish2.gif"),
@@ -44,8 +45,10 @@ const saveImages = async (s) => {
                 console.log(`Images to save retrieved`);
                 //console.log(result['src']);
                 let src = [];
-                for (let i of result['src']){
-                    src.push(i);
+                if (result['src']){
+                    for (let i of result['src']){
+                        src.push(i);
+                    }
                 }
                 for (let i of s){
                     if (!src.includes(i)){ // for no duplicates
@@ -72,9 +75,11 @@ const deleteImages = async (s) => {
             console.log(`Images to delete retrieved`);
             //console.log(result['src']);
             let src = [];
-            for (let i of result['src']){
-                if (!s.includes(i)){
-                    src.push(i);
+            if (result['src']){
+                for (let i of result['src']){
+                    if (!s.includes(i)){
+                        src.push(i);
+                    }
                 }
             }
             //console.log(src);
@@ -137,8 +142,10 @@ window.addEventListener('load', () => {
         //console.log(result['src']);
 
         let src = [];
-        for (let i of result['src']){
-            src.push(i);
+        if (result['src']){
+            for (let i of result['src']){
+                src.push(i);
+            }
         }
         replaceHeaders(src);
     }); 
