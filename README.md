@@ -1,3 +1,4 @@
+![SUC preview alt text](https://github.com/quinnshim2021/Spice-Up-Canvas/blob/background/images/preview.gif)
 # Spice Up Canvas
 The header images on Canvas's Dashboard are usually boring. With this Chrome Extension, you can easily change them to be personalized to whatever image/gif you want!
 
@@ -9,21 +10,19 @@ The header images on Canvas's Dashboard are usually boring. With this Chrome Ext
 - Proceed to steps below.
 
 ## Personalizing this Extension
-- Open `manifest.json`, on line 8 change string to the url of your Canvas' url. Save the file.
-  - Ex: `"https://canvas.yale.edu/"`
-- Find your images. Images can be any file type. NOTE: Images should be landscape.
-- Save images to images folder. Feel free to delete dummy images I have saved there already.
-- Open `content.js`. Starting on line 7, edit path to your images.
-  - If you saved images to Images folder, just replace name/extension.
-- You can have as many or few images as you'd like. I have 9 just to show variety but feel free to have as little as 1.
-  - NOTE: If you have less images than cards, images will be repeated.
-- Finally, save `content.js` and go back to `chrome://extensions`. Click refresh button on Spice-Up-Canvas card. 
-- You're good to go! I like to show all classes so that I can have more images :)
+- The only hands on step you'll need to do is to follow the link below to get a <b>free</b> Giphy API Key. Once you have it, add a file to the Popup folder titled `env.js`. The only line you need to write is `const msg = { 'API_KEY': "your_api_key_here"}`. Once you have that file, you're good to go!
+  - <a href='https://support.giphy.com/hc/en-us/articles/360020283431-Request-A-GIPHY-API-Key'>Request a Giphy API Key</a>
+- Once you have your API key and have the extension loaded in Chrome, go to Canvas and open the Spice pop-up. There, you will find a search bar and a trending page for Giphy gifs. Feel free to explore trending or simply search for your favorite topic. Once you select a gif, select 'Upload' to see it on your Canvas page! 
+  - To delete gifs, go to 'Saved', select the gifs you'd like to remove, and select 'Delete.'
+- You can have as many or few images as you'd like. 
+  - NOTE: If you have less images than cards, images will be repeated. For this reason, I like to have 2-5 gifs saved at a time.
+- If you like the minimalist look of the preview above, I left the code doing that commented out in `content.js`.
 
 ## Notes
 - Using env.js file to hold api key. Will need to create your own file containing your key as I have mine covered by my .gitignore.
+- The preview gif is a big file so it's a bit laggy. The result in real time looks much better.
 
-## Notes for Future
+## Notes/To-Do for Future
+- UI looks like shit
+- Add background image + minimalist features
 - Work on loading times + caching
-- Add some more creative updates to Canvas.
-- Allow going to more pages in Popup
