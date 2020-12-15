@@ -14,10 +14,10 @@ const replaceHeaders = (src) => {
                chrome.extension.getURL("../../images/td.gif")];
     
     src = alt; 
-    document.getElementsByClassName("ic-app")[0].setAttribute('style', `background: url(${chrome.extension.getURL("../../images/mountain.gif")}) !important; background-size: cover !important; background-repeat: no-repeat !important;`);
-    document.getElementById("right-side-wrapper").setAttribute('style', `visibility: hidden !important;`)
-    document.getElementsByClassName("ic-Dashboard-header")[0].setAttribute('style', `visibility: hidden !important; height: 0px !important;`)
-    document.getElementsByClassName("ic-Layout-wrapper")[0].setAttribute('style', `max-width: 2000px !important;`)
+    // document.getElementsByClassName("ic-app")[0].setAttribute('style', `background: url(${chrome.extension.getURL("../../images/mountain.gif")}) !important; background-size: cover !important; background-repeat: no-repeat !important;`);
+    // document.getElementById("right-side-wrapper").setAttribute('style', `visibility: hidden !important;`)
+    // document.getElementsByClassName("ic-Dashboard-header")[0].setAttribute('style', `visibility: hidden !important; height: 0px !important;`)
+    // document.getElementsByClassName("ic-Layout-wrapper")[0].setAttribute('style', `max-width: 2000px !important;`)
     */
     /* end of personal stuff ^^ */
 
@@ -30,12 +30,6 @@ const replaceHeaders = (src) => {
         box.setAttribute('style', `background: url(${src[count]}) !important; background-size: cover !important; background-repeat: no-repeat !important;`);
         count ++;
     }
-
-    document.getElementsByClassName("ic-app")[0].setAttribute('style', `background: url(${chrome.extension.getURL("../../images/mountain.gif")}) !important; background-size: cover !important; background-repeat: no-repeat !important;`);
-    document.getElementById("right-side-wrapper").setAttribute('style', `visibility: hidden !important;`)
-    document.getElementsByClassName("ic-Dashboard-header")[0].setAttribute('style', `visibility: hidden !important; height: 0px !important;`)
-    document.getElementsByClassName("ic-Layout-wrapper")[0].setAttribute('style', `max-width: 2000px !important;`)
-
 }
 
 const saveImages = async (s) => {
