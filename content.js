@@ -5,10 +5,10 @@ const replaceHeaders = (src) => {
     let headerHeros = document.getElementsByClassName("ic-DashboardCard__header_hero");
 
     /* start of my personal stuff */
-    let alt = [chrome.extension.getURL("../../images/cat.gif"), 
+    /*let alt = [chrome.extension.getURL("../../images/cat.gif"), 
                chrome.extension.getURL("../../images/wwy.gif"), 
                chrome.extension.getURL("../../images/tokyo.gif"), 
-               chrome.extension.getURL("../../images/mista.gif"),
+               chrome.extension.getURL("../../images/fish2.gif"),
                chrome.extension.getURL("../../images/bakugo.gif"),
                chrome.extension.getURL("../../images/td.gif")];
     
@@ -17,6 +17,7 @@ const replaceHeaders = (src) => {
     document.getElementById("right-side-wrapper").setAttribute('style', `visibility: hidden !important;`)
     document.getElementsByClassName("ic-Dashboard-header")[0].setAttribute('style', `visibility: hidden !important; height: 0px !important;`)
     document.getElementsByClassName("ic-Layout-wrapper")[0].setAttribute('style', `max-width: 2000px !important;`)
+    */
     /* end of personal stuff ^^ */
 
     if (src === undefined || src.length === 0){ return; }
