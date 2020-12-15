@@ -1,4 +1,4 @@
-![SUC preview alt text](https://github.com/quinnshim2021/Spice-Up-Canvas/blob/background/images/preview.gif)
+![SUC preview alt text](https://github.com/quinnshim2021/Spice-Up-Canvas/blob/master/images/preview.gif)
 # Spice Up Canvas
 The header images on Canvas's Dashboard are usually boring. With this Chrome Extension, you can easily change them to be personalized to whatever image/gif you want!
 
