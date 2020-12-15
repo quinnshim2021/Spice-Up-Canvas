@@ -1,6 +1,6 @@
 ![SUC preview alt text](https://github.com/quinnshim2021/Spice-Up-Canvas/blob/master/images/preview.gif)
 # Spice Up Canvas
-The header images on Canvas's Dashboard are usually boring. With this Chrome Extension, you can easily change them to be personalized to whatever image/gif you want!
+The header images on Canvas's Dashboard are usually boring. With this Chrome Extension, you can easily change them to be personalized to whatever image/gif you want! 
 
 ## Uploading to Chrome
 - Download this repository as a zip file or via cloning.
@@ -23,6 +23,7 @@ The header images on Canvas's Dashboard are usually boring. With this Chrome Ext
 - The preview gif is a big file so it's a bit laggy. The result in real time looks much better.
 
 ## Notes/To-Do for Future
+- Not published bc that takes time and I'd prob reach out to Canvas + go over Giphy's terms of use again.
 - UI looks like shit
 - Add background image + minimalist features
 - Work on loading times + caching
